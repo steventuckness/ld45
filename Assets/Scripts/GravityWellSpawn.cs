@@ -29,7 +29,7 @@ public class GravityWellSpawn : MonoBehaviour
             Vector3 mousePos = new Vector3(Input.mousePosition.x,
                 Input.mousePosition.y, 0f);
             Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
-            worldPos.y = 0;
+            worldPos.z = 0;
             Instantiate(GravityWellPrefab, worldPos, Quaternion.identity);
         }
     }
