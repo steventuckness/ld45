@@ -333,7 +333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9917ddbca0fc4979ab9a616f78329e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GravityWellPrefab: {fileID: 1026864849}
+  GravityWellPrefab: {fileID: 357328892071287752, guid: 2e48c674364e344b5bf39a5312529953,
+    type: 3}
 --- !u!4 &659040442
 Transform:
   m_ObjectHideFlags: 0
@@ -445,12 +446,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GravityWellPrefab: {fileID: 0}
---- !u!1 &1026864849 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 357328892071287752, guid: 2e48c674364e344b5bf39a5312529953,
-    type: 3}
-  m_PrefabInstance: {fileID: 4044284391143618766}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1174054150
 GameObject:
   m_ObjectHideFlags: 0
