@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Attractor : MonoBehaviour
 {
-
     const float G = 6.674f;
     
     public Rigidbody rb;
@@ -19,7 +18,7 @@ public class Attractor : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    protected void OnEnable()
     {
         if (Attractors == null)
             Attractors = new List<Attractor>();
@@ -29,6 +28,8 @@ public class Attractor : MonoBehaviour
 
     void Attract (Attractor objToAttract)
     {
+        if (objToAttract.GetType() != typeof(Planet))
+            return;
         Rigidbody rbToAttract = objToAttract.rb;
 
         Vector3 direction = rb.position - rbToAttract.position;
