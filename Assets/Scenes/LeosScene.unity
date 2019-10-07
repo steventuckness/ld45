@@ -1054,5 +1054,15 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -31195573651293012, guid: 1983137cda9a44786804a8d76114b88c,
+        type: 3}
+      propertyPath: explodeScript
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -31195573651293012, guid: 1983137cda9a44786804a8d76114b88c,
+        type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1983137cda9a44786804a8d76114b88c, type: 3}

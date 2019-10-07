@@ -111,6 +111,7 @@ MonoBehaviour:
   xVelocity: 150
   yVelocity: 0
   zVelocity: 0
+  wtxExplosion: {fileID: 0}
 --- !u!54 &306279873572824680
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -139,5 +140,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5fa8f7488eb1493fb6f4abea40db3ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manualControlEnabled: 1
   rb: {fileID: 306279873572824680}

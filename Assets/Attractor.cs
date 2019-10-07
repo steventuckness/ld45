@@ -28,6 +28,12 @@ public class Attractor : MonoBehaviour
 
     void Attract (Attractor objToAttract)
     {
+        // added this check because errors were getting thrown during scene reload
+        if (this.rb == null || objToAttract == null)
+        {
+            return;
+        }
+        
         if (objToAttract.GetType() != typeof(Planet))
             return;
         Rigidbody rbToAttract = objToAttract.rb;

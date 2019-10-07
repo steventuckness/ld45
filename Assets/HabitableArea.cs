@@ -20,7 +20,6 @@ public class HabitableArea : MonoBehaviour
     {
         if (this.destinationsReached.LoopsAchieved == this.LoopsRequiredToWin)
         {
-            DebugLog("WIN");
             this.winMenuUI.SetActive(true);
         }
     }
