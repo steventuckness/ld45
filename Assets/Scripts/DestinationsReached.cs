@@ -12,7 +12,7 @@ public enum Destinations
 
 public class DestinationsReached
 {
-    public bool LoopAchieved { get; private set; }
+    public int LoopsAchieved { get; private set; }
 
     private List<Destinations> destinationsReached;
 
@@ -21,21 +21,26 @@ public class DestinationsReached
         this.destinationsReached = new List<Destinations>();
     }
 
-    private bool AllLocationsReachedOnce()
+    private bool AllLocationsReached()
     {
         return this.destinationsReached.Count == 4;
     }
 
     public void Reset()
     {
+        this.LoopsAchieved = 0;
         this.destinationsReached = new List<Destinations>();
     }
 
     private void UpdateStatus(Destinations destination)
     {
-        if (this.AllLocationsReachedOnce() && this.destinationsReached.First().Equals(destination))
+        // Each loop has to be in the same direction, 
+        // but this doesn't account for making sure all loops are in the same direction for now.
+        if (this.AllLocationsReached() && this.destinationsReached.First().Equals(destination))
         {
-            this.LoopAchieved = true;
+            this.LoopsAchieved++;
+            this.destinationsReached = new List<Destinations>();
+            this.destinationsReached.Add(destination);
         }
     }
 
