@@ -17,9 +17,19 @@ public class GravityWell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.timeRemaining -= Time.deltaTime;
-        if (timeRemaining <= 0) {
+        if (Input.GetMouseButtonUp(0))
+        {
             Destroy(gameObject);
         }
+        //this.timeRemaining -= Time.deltaTime;
+        //if (timeRemaining <= 0)
+        //{
+        //    Destroy(gameObject);
+        //}
     }
+
+    //void OnMouseUp()
+    //{
+    //    Destroy(gameObject);
+    //}
 }
