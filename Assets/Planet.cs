@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Planet : Attractor
@@ -47,6 +47,4 @@ public class Planet : Attractor
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName, LoadSceneMode.Single);
     }
-
-  
 }
