@@ -7,7 +7,21 @@ public class Planet : Attractor
     public float xVelocity = 100f;
     public float yVelocity;
     public float zVelocity;
-    
+
+    void Update()
+    {
+        if (IsVisibleFrom(this.GetComponent<Renderer>(), Camera.main))
+        {
+            this.ResetScene(1f);
+        }
+    }
+
+    bool IsVisibleFrom(Renderer renderer, Camera camera)
+    {
+        Plane[] planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
+        return (!GeometryUtility.TestPlanesAABB(planes, renderer.bounds));
+    }
+
     new private void OnEnable()
     {
         base.OnEnable();
@@ -19,8 +33,13 @@ public class Planet : Attractor
         if (collision.gameObject.name.Equals("Sun"))
         {
             this.GetComponent<MeshRenderer>().enabled = false;
-            Invoke("ResetScene", 2f);       
+            this.ResetScene(1f); 
         }
+    }
+
+    void ResetScene(float delay = 0f)
+    {
+        Invoke("ResetScene", delay);
     }
 
     void ResetScene()
@@ -28,4 +47,6 @@ public class Planet : Attractor
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName, LoadSceneMode.Single);
     }
+
+  
 }
