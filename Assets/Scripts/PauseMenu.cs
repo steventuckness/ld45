@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -36,6 +37,12 @@ public class PauseMenu : MonoBehaviour
         AudioListener.pause = false;
         pauseMenuUI.SetActive(false);
         isPaused = false;
+    }
+
+    public void Restart()
+    {
+       string currentSceneName = SceneManager.GetActiveScene().name;
+       SceneManager.LoadScene(currentSceneName, LoadSceneMode.Single);
     }
 
     public void Quit()
